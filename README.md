@@ -10,7 +10,7 @@ Alguns campos no modelo principal são:
 + Genero
 + Framework
   
-![image](https://github.com/JoaoEduardoFM/Projeto-PrimeFace/assets/90796699/34211d15-f23e-4ec2-a203-4da85f15f8b2)
+![image](https://github.com/JoaoEduardoFM/Projeto-PrimeFaces/assets/90796699/7d73ff6b-0ec5-42f4-8bd5-50b24e93247c)
 
 ![header](https://user-images.githubusercontent.com/90796699/228732700-385f1245-70e2-4afa-8fcb-3838c43cc3d1.png)
 ![header](https://user-images.githubusercontent.com/90796699/228732963-6bafac5b-bb12-4e8d-b72a-47b3798f7bc3.png)
