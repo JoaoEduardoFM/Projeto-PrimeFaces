@@ -1,7 +1,6 @@
 # Projeto-PrimeFaces
  
-![image](https://github.com/JoaoEduardoFM/Projeto-PrimeFace/assets/90796699/ba9a9dcf-1a59-4e7c-b248-9215ab9e34c2)
-Status: Em desenvolvimento ⚠️
+ Status: Em desenvolvimento ⚠️
 
 É uma aplicação planejada por mim, onde gerencio controle de usuarios.
 Alguns campos no modelo principal são:
