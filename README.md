@@ -8,9 +8,8 @@ Alguns campos no modelo principal são:
 + nome
 + sobrenome
 + genero
-
-![image](https://github.com/JoaoEduardoFM/Projeto-PrimeFace/assets/90796699/a280a6d2-a823-41c0-9cef-b741ee4a20b1)
-
+  
+![image](https://github.com/JoaoEduardoFM/Projeto-PrimeFace/assets/90796699/34211d15-f23e-4ec2-a203-4da85f15f8b2)
 
 ![header](https://user-images.githubusercontent.com/90796699/228732700-385f1245-70e2-4afa-8fcb-3838c43cc3d1.png)
 ![header](https://user-images.githubusercontent.com/90796699/228732963-6bafac5b-bb12-4e8d-b72a-47b3798f7bc3.png)
