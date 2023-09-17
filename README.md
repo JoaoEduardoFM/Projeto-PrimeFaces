@@ -4,10 +4,11 @@
 
 É uma aplicação planejada por mim, onde gerencio controle de usuarios.
 Alguns campos no modelo principal são: 
-+ id
-+ nome
-+ sobrenome
-+ genero
++ Id
++ Nome
++ Sobrenome
++ Genero
++ Framework
   
 ![image](https://github.com/JoaoEduardoFM/Projeto-PrimeFace/assets/90796699/34211d15-f23e-4ec2-a203-4da85f15f8b2)
 
