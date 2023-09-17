@@ -3,11 +3,11 @@
  Status: Em desenvolvimento ⚠️
 
 É uma aplicação planejada por mim, onde gerencio controle de usuarios.
-Alguns campos no modelo principal são:
-id
-nome
-sobrenome
-genero
+Alguns campos no modelo principal são: 
++ id
++ nome
++ sobrenome
++ genero
 
 ![image](https://github.com/JoaoEduardoFM/Projeto-PrimeFace/assets/90796699/a280a6d2-a823-41c0-9cef-b741ee4a20b1)
 
