@@ -5,6 +5,7 @@
 	xmlns:p="http://primefaces.org/ui"
 	xmlns:f="http://java.sun.com/jsf/core">
 <h:head>
+	<title>Cadastro usuário</title>
 </h:head>
 
 <h:body>
@@ -12,7 +13,7 @@
 	<h:form id="formCadastro">
 
 		<div class="init">
-			<p:breadCrumb >
+			<p:breadCrumb>
 				<p:menuitem value="case" action="paginaCadastro?faces-redirect=true" />
 				<p:menuitem value="Home" action="paginaCadastro?faces-redirect=true" />
 				<p:menuitem value="Cadastro usuário"
@@ -22,7 +23,8 @@
 
 		<div class="card">
 
-			<p:panelGrid columns="2" columnClasses="ui-grid-col-1,ui-grid-col-1"
+			<p:panelGrid columns="2"
+				columnClasses="ui-grid-col-1,ui-grid-col-1,ui-grid-col-1"
 				layout="grid" styleClass="ui-panelgrid-blank ui-fluid"
 				style="border:0px none; background-color:transparent;">
 
@@ -30,12 +32,12 @@
 				<h:inputText value="#{pessoabean.pessoa.id}" readonly="true" />
 
 				<p:outputLabel for="@next" value="Nome:" />
-				<h:inputText value="#{pessoabean.pessoa.nome}"/>
+				<h:inputText value="#{pessoabean.pessoa.nome}" />
 
 				<p:outputLabel for="@next" value="Sobrenome" />
-				<h:inputText value="#{pessoabean.pessoa.sobrenome}"/>
+				<h:inputText value="#{pessoabean.pessoa.sobrenome}" />
 
-				<p:outputLabel for="@next" value="Idade:" rendered="true"/>
+				<p:outputLabel for="@next" value="Idade:" rendered="true" />
 				<h:inputText value="#{pessoabean.pessoa.idade}" />
 
 				<p:outputLabel for="selectOne" value="Genero" />
@@ -44,15 +46,24 @@
 					<f:selectItem itemLabel="Feminino" itemValue="Feminino" />
 				</p:selectOneMenu>
 
+				<p:outputLabel for="selectOne" value="Framework:" />
+				<p:selectManyMenu value="#{pessoabean.pessoa.frameworks}">
+					<f:selectItem itemValue="Hibernate" itemLabel="Hibernate" />
+					<f:selectItem itemValue="Spring mvc" itemLabel="Spring mvc" />
+					<f:selectItem itemValue="JPA" itemLabel="JPA" />
+					<f:selectItem itemValue="JSF" itemLabel="JSF" />
+					<f:selectItem itemValue="PrimeFaces" itemLabel="PrimeFaces" />
+				</p:selectManyMenu>
 			</p:panelGrid>
+
 		</div>
-
-
 		<div>
-			<p:commandButton value="Salvar" actionListener="#{pessoabean.salvar}" />
+			<p:commandButton id="save" value="Salvar"
+				actionListener="#{pessoabean.salvar}" update="@all" />
 			<p:commandButton value="Excluir" action="#{pessoabean.remove}" />
 			<p:commandButton value="Limpar" type="reset" />
 		</div>
+
 		<div class="card3">
 			<p:dataTable var="pessoa" value="#{pessoabean.pessoas}">
 				<p:column headerText="Id">
