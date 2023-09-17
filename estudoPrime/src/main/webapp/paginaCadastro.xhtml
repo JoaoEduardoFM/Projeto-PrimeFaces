@@ -64,6 +64,7 @@
 			<p:commandButton value="Limpar" type="reset" />
 		</div>
 
+
 		<div class="card3">
 			<p:dataTable var="pessoa" value="#{pessoabean.pessoas}">
 				<p:column headerText="Id">
@@ -86,19 +87,22 @@
 					<h:outputText value="#{pessoa.sexo}" />
 				</p:column>
 
-				<p:column headerText="Editar">
+				<p:column headerText="Editar"
+					style="text-align: center; vertical-align: middle;">
 					<h:commandLink style="text-align: center;"
-						action="#{pessoabean.salvar}" value="Editar">
+						action="#{pessoabean.salvar}">
 						<f:setPropertyActionListener value="#{pessoa}"
 							target="#{pessoabean.pessoa}" />
+						<h:graphicImage value="/resources/img/editar1.png" />
 					</h:commandLink>
 				</p:column>
 
-				<p:column headerText="Excluir">
-					<h:commandLink style="text-align: center;"
-						action="#{pessoabean.remove}" value="Remover">
-						<f:setPropertyActionListener value="#{pessoa}"
-							target="#{pessoabean.pessoa}" />
+				<p:column headerText="Excluir"
+					style="text-align: center; vertical-align: middle;">
+					<h:commandLink action="#{pessoabean.remove}"
+						style="display: block; text-align: center;">
+						<h:graphicImage value="/resources/img/remover1.png"
+							style="margin: 0 auto;" />
 					</h:commandLink>
 				</p:column>
 
