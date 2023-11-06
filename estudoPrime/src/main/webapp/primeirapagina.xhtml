@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+	<title>projetoJSF</title>
+</h:head>
+
+<h:body>
+
+	<h:form id="formpessoa">
+
+		<h:graphicImage library="img" name="logotipo.png" height="20"
+			width="20" />
+
+		<h:panelGrid columns="2" cellspacing="1" >
+			<f:facet name="header">
+				<h:outputText value="Cadastro JSF" />
+			</f:facet>
+			<h:outputLabel value="Id:" />
+			<h:inputText value="#{pessoabean.pessoa.id}" readonly="true" />
+
+			<h:outputLabel value="Nome:" />
+			<h:inputText value="#{pessoabean.pessoa.nome}" />
+
+			<h:outputLabel value="Sobrenome" />
+			<h:inputText value="#{pessoabean.pessoa.sobrenome}" />
+
+			<h:outputLabel value="Idade:" />
+			<h:inputText value="#{pessoabean.pessoa.idade}" />
+
+			<h:outputLabel value="Sexo:" />
+
+			<h:selectOneMenu id="camposexo" value="#{pessoabean.pessoa.sexo}"
+				required="false">
+				<f:selectItem itemValue="NAO" itemLabel="--Selecione--"
+					noSelectionOption="false" />
+				<f:selectItem itemValue="MASCULINO" itemLabel="Masculino" />
+				<f:selectItem itemValue="FEMININO" itemLabel="Feminino" />
+			</h:selectOneMenu>
+
+			<h:outputLabel value="Frameworks:" />
+
+			<h:selectManyMenu id="campoframework" style="height:150px;"
+				value="#{pessoabean.pessoa.frameworks}">
+				<f:selectItem itemValue="Hibernate" itemLabel="Hibernate" />
+				<f:selectItem itemValue="Spring mvc" itemLabel="Spring mvc" />
+				<f:selectItem itemValue="JPA" itemLabel="JPA" />
+				<f:selectItem itemValue="JSF" itemLabel="JSF" />
+				<f:selectItem itemValue="PrimeFaces" itemLabel="PrimeFaces" />
+			</h:selectManyMenu>
+
+			<h:outputLabel value="Ativo" />
+			<h:selectBooleanCheckbox value="#{pessoabean.pessoa.ativo}" />
+
+			<h:outputLabel />
+			<h:panelGroup>
+				<h:commandButton value="Novo" action="#{pessoabean.novo}"
+					image="resources\img\novo1.png" title="Novo" />
+				<h:commandButton value="Salvar" action="#{pessoabean.salvar}"
+					image="resources\img\salvar1.png" title="Salvar" />
+				<h:commandButton value="Remover" action="#{pessoabean.remove}"
+					image="resources\img\remover1.png" title="Remover" />
+				<h:commandButton value="Limpar" type="reset"
+					image="resources\img\limpar.png" title="Limpar" />
+			</h:panelGroup>
+		</h:panelGrid>
+
+
+		<h:dataTable value="#{pessoabean.pessoas}" var="pessoa" border="3"
+			cellspacing="6">
+
+			<f:facet name="header">Lista de pessoas cadastradas:</f:facet>
+			<h:column>
+				<f:facet name="header">Id:</f:facet>
+				<h:outputText value="#{pessoa.id}" />
+			</h:column>
+
+			<h:column>
+				<f:facet name="header">Nome:</f:facet>
+				<h:outputText value="#{pessoa.nome}" />
+			</h:column>
+
+			<h:column>
+				<f:facet name="header">Sobrenome:</f:facet>
+				<h:outputText value="#{pessoa.sobrenome}" />
+			</h:column>
+
+			<h:column>
+				<f:facet name="header">idade:</f:facet>
+				<h:outputText value="#{pessoa.idade}" />
+			</h:column>
+
+			<h:column>
+				<f:facet name="header">Sexo:</f:facet>
+				<h:outputText value="#{pessoa.sexo}" />
+			</h:column>
+
+			<h:column>
+				<f:facet name="header">Editar:</f:facet>
+				<h:commandLink>
+					<f:setPropertyActionListener value="#{pessoa}"
+						target="#{pessoabean.pessoa}"></f:setPropertyActionListener>
+					<h:graphicImage value="/resources/img/editar1.png" />
+				</h:commandLink>
+
+			</h:column>
+
+			<h:column>
+				<f:facet name="header">Excluír:</f:facet>
+				<h:commandLink action="#{pessoabean.remove}">
+					<f:setPropertyActionListener value="#{pessoa}"
+						target="#{pessoabean.pessoa}" />
+					<h:graphicImage value="/resources/img/excluir.png" />
+				</h:commandLink>
+			</h:column>
+
+		</h:dataTable>
+
+	</h:form>
+
+
+</h:body>
+</html>
