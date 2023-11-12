@@ -4,7 +4,7 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core">
 <h:head>
-	<title>projetoJSF</title>
+	<title>Cadastro de usuário</title>
 </h:head>
 
 <h:body>
@@ -16,7 +16,7 @@
 
 		<h:panelGrid columns="2" cellspacing="1" >
 			<f:facet name="header">
-				<h:outputText value="Cadastro JSF" />
+				<h:outputText value="Cadastro de usuário"/>
 			</f:facet>
 			<h:outputLabel value="Id:" />
 			<h:inputText value="#{pessoabean.pessoa.id}" readonly="true" />
@@ -53,6 +53,21 @@
 
 			<h:outputLabel value="Ativo" />
 			<h:selectBooleanCheckbox value="#{pessoabean.pessoa.ativo}" />
+			
+			<h:outputLabel value="Perfil:" />
+			<h:selectOneMenu id="campoperfil" value="#{pessoabean.pessoa.perfilUser}"
+				required="false">
+				<f:selectItem itemValue="NAO" itemLabel="--Selecione--"
+					noSelectionOption="false" />
+				<f:selectItem itemValue="ADMINISTRADOR" itemLabel="Administrador" />
+				<f:selectItem itemValue="SECRETARIO" itemLabel="secretário" />
+			</h:selectOneMenu>
+			
+			<h:outputLabel value="Login:"/>
+			<h:inputText value="#{pessoabean.pessoa.login}"/>
+			
+			<h:outputLabel value="Senha"/>
+			<h:inputSecret value="#{pessoabean.pessoa.senha}"/>
 
 			<h:outputLabel />
 			<h:panelGroup>
@@ -71,7 +86,7 @@
 		<h:dataTable value="#{pessoabean.pessoas}" var="pessoa" border="3"
 			cellspacing="6">
 
-			<f:facet name="header">Lista de pessoas cadastradas:</f:facet>
+			<f:facet name="header">Lista usuários cadastrados:</f:facet>
 			<h:column>
 				<f:facet name="header">Id:</f:facet>
 				<h:outputText value="#{pessoa.id}" />
@@ -95,6 +110,16 @@
 			<h:column>
 				<f:facet name="header">Sexo:</f:facet>
 				<h:outputText value="#{pessoa.sexo}" />
+			</h:column>
+			
+			<h:column>
+				<f:facet name="header">login:</f:facet>
+				<h:outputText value="#{pessoa.login}" />
+			</h:column>
+				
+			<h:column>
+				<f:facet name="header">senha:</f:facet>
+				<h:outputText value="#{pessoa.senha}" />
 			</h:column>
 
 			<h:column>

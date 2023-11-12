@@ -29,12 +29,18 @@ public class Pessoa implements Serializable {
 
 	private Boolean ativo;
 
+	private String login;
+
+	private String senha;
+
+	private String perfilUser;
+
 	public Pessoa() {
 		// TODO Auto-generated constructor stub
 	}
 
 	public Pessoa(Long id, String nome, String sobrenome, Integer idade, String sexo, String[] frameworks,
-			Boolean ativo) {
+			Boolean ativo, String login, String senha) {
 		super();
 		this.id = id;
 		this.nome = nome;
@@ -43,6 +49,32 @@ public class Pessoa implements Serializable {
 		this.sexo = sexo;
 		this.frameworks = frameworks;
 		this.ativo = ativo;
+		this.login = login;
+		this.senha = senha;
+	}
+
+	public String getPerfilUser() {
+		return perfilUser;
+	}
+
+	public void setPerfilUser(String perfilUser) {
+		this.perfilUser = perfilUser;
+	}
+
+	public String getLogin() {
+		return login;
+	}
+
+	public void setLogin(String login) {
+		this.login = login;
+	}
+
+	public String getSenha() {
+		return senha;
+	}
+
+	public void setSenha(String senha) {
+		this.senha = senha;
 	}
 
 	public Boolean getAtivo() {
