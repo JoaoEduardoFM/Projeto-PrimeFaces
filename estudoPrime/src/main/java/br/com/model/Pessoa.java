@@ -53,14 +53,6 @@ public class Pessoa implements Serializable {
 		this.senha = senha;
 	}
 
-	public String getPerfilUser() {
-		return perfilUser;
-	}
-
-	public void setPerfilUser(String perfilUser) {
-		this.perfilUser = perfilUser;
-	}
-
 	public String getLogin() {
 		return login;
 	}
@@ -75,6 +67,14 @@ public class Pessoa implements Serializable {
 
 	public void setSenha(String senha) {
 		this.senha = senha;
+	}
+
+	public String getPerfilUser() {
+		return perfilUser;
+	}
+
+	public void setPerfilUser(String perfilUser) {
+		this.perfilUser = perfilUser;
 	}
 
 	public Boolean getAtivo() {
